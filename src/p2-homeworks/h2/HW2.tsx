@@ -34,7 +34,7 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): a
         return affairs.filter( a => a.priority === 'low' )
     }
 }
-export const deleteAffair = (affairs: Array<AffairType>, _id: number): any => {
+export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => {
     return affairs.filter( a => a._id !== _id )
 }
 

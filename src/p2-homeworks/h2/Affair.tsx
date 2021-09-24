@@ -14,13 +14,63 @@ function Affair(props: AffairPropsType) {
         props.deleteAffairCallback(_id)
     }
 
-    return (
+    if (props.affair.priority === 'high') {
+        return (
+            <div className={s.wrapper}>
+                <div className={s.name}>
+                    {props.affair.name}
+                </div>
+                <div className={s.priority}>
+                    {<div className={s.priorityHigh}>{`[${props.affair.priority}]`}</div>}
+                </div>
+                <div>
+                    <button onClick={() => deleteCallback(props.affair._id)}>x</button>
+                </div>
+
+            </div>
+        )
+    }
+
+    if (props.affair.priority === 'middle') {
+        return (
+            <div className={s.wrapper}>
+                <div className={s.name}>
+                    {props.affair.name}
+                </div>
+                <div className={s.priority}>
+                    {<div className={s.priorityMiddle}>{`[${props.affair.priority}]`}</div>}
+                </div>
+                <div>
+                    <button onClick={() => deleteCallback(props.affair._id)}>x</button>
+                </div>
+
+            </div>
+        )
+    }
+
+    if (props.affair.priority === 'low') {
+        return (
+            <div className={s.wrapper}>
+                <div className={s.name}>
+                    {props.affair.name}
+                </div>
+                <div className={s.priority}>
+                    {<div className={s.priorityLow}>{`[${props.affair.priority}]`}</div>}
+                </div>
+                <div>
+                    <button onClick={() => deleteCallback(props.affair._id)}>x</button>
+                </div>
+
+            </div>
+        )
+
+    } else return (
         <div className={s.wrapper}>
             <div className={s.name}>
                 {props.affair.name}
             </div>
             <div className={s.priority}>
-                { `[${props.affair.priority}]` }
+                {`[${props.affair.priority}]`}
             </div>
             <div>
                 <button onClick={() => deleteCallback(props.affair._id)}>x</button>

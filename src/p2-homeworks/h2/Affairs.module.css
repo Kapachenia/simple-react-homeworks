@@ -22,3 +22,15 @@ button {
     cursor: pointer;
     margin-right: 10px;
 }
+
+.priorityHigh {
+    color: red;
+}
+
+.priorityMiddle {
+    color: orange;
+}
+
+.priorityLow {
+    color: yellowgreen;
+}
