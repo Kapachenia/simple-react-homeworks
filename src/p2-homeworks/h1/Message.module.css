@@ -29,6 +29,8 @@
 }
 
 .name {
+    font-size: 20px;
+    font-weight: bold;
     color: rgb(165, 81, 217);
 }
 

@@ -1,14 +1,8 @@
 import React from 'react'
-import Message from "./Message";
+import Message, {MessagePropsType} from "./Message";
+import AlternativeMessage from "./AlternativeMessage";
 
-export type MessageDataType = {
-    avatar: string
-    name: string
-    message: string
-    time: string
-}
-
-const messageData: MessageDataType = {
+const messageData: MessagePropsType = {
     avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
     name: 'Some Name',
     message: 'some text',

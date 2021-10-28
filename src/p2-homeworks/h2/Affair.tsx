@@ -3,7 +3,6 @@ import {AffairType} from "./HW2";
 import s from "./Affairs.module.css"
 
 type AffairPropsType = {
-    // key не нужно типизировать
     affair: AffairType
     deleteAffairCallback: (value: number) => void
 }
@@ -26,7 +25,6 @@ function Affair(props: AffairPropsType) {
                 <div>
                     <button onClick={() => deleteCallback(props.affair._id)}>x</button>
                 </div>
-
             </div>
         )
     }
@@ -43,7 +41,6 @@ function Affair(props: AffairPropsType) {
                 <div>
                     <button onClick={() => deleteCallback(props.affair._id)}>x</button>
                 </div>
-
             </div>
         )
     }
@@ -60,7 +57,6 @@ function Affair(props: AffairPropsType) {
                 <div>
                     <button onClick={() => deleteCallback(props.affair._id)}>x</button>
                 </div>
-
             </div>
         )
 
@@ -75,7 +71,6 @@ function Affair(props: AffairPropsType) {
             <div>
                 <button onClick={() => deleteCallback(props.affair._id)}>x</button>
             </div>
-
         </div>
     )
 }
