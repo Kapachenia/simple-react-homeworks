@@ -15,6 +15,7 @@ type GreetingContainerPropsType = {
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
     const [name, setName] = useState<string>('')
     const [error, setError] = useState<string>('')
+    const [toggle, setToggle] = useState<boolean>(false)
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
         setError('')
@@ -22,12 +23,13 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     }
 
     const addUser = () => {
-        if (name) {
+        if (name.trim()) {
             alert(`Hello ${name} !`)
-            addUserCallback(name)
+            addUserCallback(name.trim())
             setName('')
         } else {
             setError('error')
+            setName('')
         }
 
     }
@@ -36,6 +38,11 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         if (e.charCode === 13) {
             addUser()
         }
+        if (e.charCode === 32) {
+            setToggle(true)
+            setError('error')
+        }
+
     }
 
     const totalUsers = users.length
@@ -48,6 +55,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             error={error}
             totalUsers={totalUsers}
             onKeyPressHandler={onKeyPressHandler}
+            toggle={toggle}
         />
     )
 }
