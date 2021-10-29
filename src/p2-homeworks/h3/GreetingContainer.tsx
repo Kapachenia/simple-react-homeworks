@@ -28,7 +28,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             addUserCallback(name.trim())
             setName('')
         } else {
-            setError('error')
+            setError('Title is required')
             setName('')
         }
 
@@ -40,7 +40,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         }
         if (e.charCode === 32) {
             setToggle(true)
-            setError('error')
+            setError('Title is required')
         }
 
     }

@@ -1,11 +1,21 @@
-.someClass {
-
+.wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
 input {
+    display: flex;
     outline:none;
+    margin-right: 10px;
+
 }
 
 .error {
+    display: flex;
     border: 1px solid red;
 }
+
+.errorTitle {
+    color: red;
+}
+
