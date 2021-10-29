@@ -1,21 +1,24 @@
 .wrapper {
     display: flex;
-    flex-direction: row;
+    align-items: flex-start;
 }
 
 input {
-    display: flex;
     outline:none;
-    margin-right: 10px;
+    margin: 10px;
 
 }
 
 .error {
-    display: flex;
     border: 1px solid red;
 }
 
 .errorTitle {
     color: red;
+    height: 25px;
+}
+
+button {
+    margin: 10px;
 }
 

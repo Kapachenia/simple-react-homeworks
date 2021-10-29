@@ -15,7 +15,6 @@ type GreetingContainerPropsType = {
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
     const [name, setName] = useState<string>('')
     const [error, setError] = useState<string>('')
-    const [toggle, setToggle] = useState<boolean>(false)
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
         setError('')
@@ -23,9 +22,10 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     }
 
     const addUser = () => {
-        if (name.trim()) {
-            alert(`Hello ${name} !`)
-            addUserCallback(name.trim())
+        const trimmedName = name.trim()
+        if (trimmedName) {
+            alert(`Hello ${trimmedName} !`)
+            addUserCallback(trimmedName)
             setName('')
         } else {
             setError('Title is required')
@@ -38,10 +38,10 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         if (e.charCode === 13) {
             addUser()
         }
-        if (e.charCode === 32) {
-            setToggle(true)
-            setError('Title is required')
-        }
+        // if (e.charCode === 32) {
+        //     setToggle(true)
+        //     setError('Title is required')
+        // }
 
     }
 
@@ -55,7 +55,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             error={error}
             totalUsers={totalUsers}
             onKeyPressHandler={onKeyPressHandler}
-            toggle={toggle}
+            // toggle={toggle}
         />
     )
 }
