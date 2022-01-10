@@ -2,6 +2,17 @@
 
 }
 
+.default:disabled {
+
+}
+
 .red {
     background: red;
+}
+
+.button {
+    /*cursor: pointer;*/
+    /*overflow: hidden;*/
+    /*position: relative;*/
+    margin: 10px;
 }
